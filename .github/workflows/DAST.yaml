@@ -11,11 +11,11 @@ jobs:
     steps:
       - name: Get GitHub Action IP
         id: ip
-        uses: haythem/public-ip@v1.3
+        run: echo "ipv4=$(curl -s https://ifconfig.me)" >> $GITHUB_OUTPUT
 
       - name: Setting environment variables
         run: |
-          echo "AWS_DEFAULT_REGION=us-west-2" >> "$GITHUB_ENV"
+          echo "AWS_DEFAULT_REGION=us-east-2" >> "$GITHUB_ENV"
           echo "AWS_SG_NAME=PyGoatSG" >> "$GITHUB_ENV"
 
       - name: Add GitHub Actions IP to AWS Security Group

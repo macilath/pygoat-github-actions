@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Get GitHub Action IP
         id: ip
-        run: echo "ipv4=$(curl -s https://checkip.amazonaws.com)" >> $GITHUB_OUTPUT
+        run: echo "ipv4=$(curl -s https://ifconfig.me)" >> $GITHUB_OUTPUT
 
       - name: Setting environment variables
         run: |
